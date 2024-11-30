@@ -1,0 +1,44 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    IdeasRush01.txt                                    :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: lde-medi <lde-medi@student.42madrid.com>   +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/11/16 01:58:51 by lde-medi          #+#    #+#              #
+#    Updated: 2024/11/16 02:00:38 by lde-medi         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+Rush 01.
+
+
+- He observado un par de cosas que me han dado una idea para solucionarlo.
+
+
+	-	Cuando en una linea o columna podemos ver solo 1 torre, la mas cercana 
+		a este punto de vista tiene que ser por cojones 4; 
+		(podra' hacerse una funcion para por lo menos poner directamente
+		todas las condiciones ciertas? o es una manera demasiado humana
+		de ver el problema y hace falta hocus pocus de matematicas que no tengo?)
+	
+	-	Misma historia, si ves 4, ya sabes que la linea va desde este punto
+		creciendo de 1 a 4 y sabemos la linea entera, cuando ves 3 la mas cercana
+		podria ser 1 o 2, cuando vemos 3 es la condicion mas jodida, porque la 
+		que tenemos mas cerca podria ser 1, 2 o 3.
+	
+	-	El enunciado quiere que recibamos las instrucciones atraves de args,
+		necesitaremos una funcion parse_arguments que vaya sacando los 16 ints
+		aseguranose de que sean todos entre 1 y 4, y si a la hora de convertirlo
+		en int, uno de ellos no respeta la funcion is_valid_value
+		(muy simple, int is_valid_value(int n) {return (i > 0 && i < 5);})
+		directamente se sale del programa por argumentos invalidos. y asi
+		comprobando a la vez que haya solo numeros legales y que sean 16
+		en total ya nos hemos quitados todas la maneras con las que pueden
+		romper la aplicacion a la hora de lanzarla, el resto de las rupturas
+		probablemente vendran de la inestabilidad de mi codigo...
+
+	-	de primeras intentare' hacer un main que pueda leer los args y 
+		interpretarlos como int, en caso de argc incorrecto o numeros no validos
+		escribira' ERROR y return 1;
+
